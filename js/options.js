@@ -26,7 +26,7 @@ $(document).ready(function () {
         if (
             $('#library').is(":checked")) {
             //change this url to match your library's! Here is Leiden's URL as an example for ExLibris Primo users - Old UI!
-            var newLibraryURL = 'http://catalogue.leidenuniv.nl/primo_library/libweb/action/search.do?fn=search&ct=search&initialSearch=true&mode=Basic&tab=all_content&indx=1&dum=true&srt=rank&vid=UBL_V1&frbg=&tb=t&scp.scps=scope%3A%28UBL_DSPACE%29%2Cscope%3A%28"UBL"%29%2Cscope%3A%28UBL_DTL%29%2Cscope%3A%28UBL_ALMA%29%2Cprimo_central_multiple_fe&vl%28freeText0%29=' + searchstring + '&source=LibrarySearchPluginPunblic'; //you can modofy &source to anything you like. This is useful to see how many users are coming to your catalogue via the plugin, in Google Analytics.
+            var newLibraryURL = 'http://onesearch.library.nd.edu/primo-explore/search?vid=NDU&tab=onesearch&query=any,contains,' + searchstring + '&source=LibrarySearchPluginPunblic'; //you can modofy &source to anything you like. This is useful to see how many users are coming to your catalogue via the plugin, in Google Analytics.
             // Create the new tab
             chrome.tabs.create({
                 url: newLibraryURL
@@ -56,7 +56,7 @@ $(document).ready(function () {
         if (
             $('#pubmed').is(":checked")) {
             //alert("Google Scholar checked");
-            var newPubmedURL = 'https://ezproxy.someuniversity.com/login?url=https://www.ncbi.nlm.nih.gov/pubmed/?term=' + searchstring; // if you use EzProxy, modify the URL here. You may also remove the EzProxy prefix compeltely.
+            var newPubmedURL = 'https://proxy.library.nd.edu/login?url=https://www.ncbi.nlm.nih.gov/pubmed/?term=' + searchstring; // if you use EzProxy, modify the URL here. You may also remove the EzProxy prefix compeltely.
             // Create the new tab
             chrome.tabs.create({
                 url: newPubmedURL
@@ -73,8 +73,8 @@ $(document).ready(function () {
 //Search definitions. %s is the variable that gets replaced by the search term.
 var searches = [
     {
-        title: "Search in the Library Catalogue", // Same as above: edit to match your library's url. Modify &soruce as well at the end. Remeber to keep '%s'
-        url: "http://catalogue.leidenuniv.nl/primo_library/libweb/action/search.do?fn=search&ct=search&initialSearch=true&mode=Basic&tab=all_content&indx=1&dum=true&srt=rank&vid=UBL_V1&frbg=&tb=t&scp.scps=scope%3A%28UBL_DSPACE%29%2Cscope%3A%28%22UBL%22%29%2Cscope%3A%28UBL_DTL%29%2Cscope%3A%28UBL_ALMA%29%2Cprimo_central_multiple_fe&vl%28freeText0%29=%s&source=LibrarySearchPluginPublic"
+        title: "Search in the Hesburgh Libraries Catalog", // Same as above: edit to match your library's url. Modify &soruce as well at the end. Remeber to keep '%s'
+        url: "http://onesearch.library.nd.edu/primo-explore/search?vid=NDU&tab=onesearch&query=any,contains,%s&source=LibrarySearchPluginPublic"
   },
     {
         title: "Search in WorldCat",
@@ -86,12 +86,12 @@ var searches = [
   },
     {
         title: "Search in PubMed", // Again: remove or adapt your ezproxy URL
-        url: "https://ezproxy.someuniversity.com/login?url=https://www.ncbi.nlm.nih.gov/pubmed/?term=%s"
+        url: "https://proxy.library.nd.edu/login?url=https://www.ncbi.nlm.nih.gov/pubmed/?term=%s"
   }
 ];
 // Create a parent item and two children.
 var parent = chrome.contextMenus.create({
-    "title": "Search with Library Search Plugin Public", // Change the name here too!
+    "title": "Search with Hesburgh Libraries Assistant", // Change the name here too!
     "id": "0",
     "contexts": ["selection"]
 });
