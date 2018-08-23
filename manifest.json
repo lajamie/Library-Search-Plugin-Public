@@ -9,7 +9,7 @@
     "browser_action": {
         "default_icon": "/images/icons/icon128.png", // see "icons" section hereunder
         "default_popup": "popup.html", // do not delete unless you know what you are doing! :)
-        "default_title": "Library Search Plugin Public" // Rename with your chosen title
+        "default_title": "Hesburgh Library Assistant" // Rename with your chosen title
     },
     "icons": {
         "16": "/images/icons/icon16.png", // the following lines determine the way your icons look. Square icons only; 16x16px, 48x48px, 128x128px
