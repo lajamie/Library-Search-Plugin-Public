@@ -21,7 +21,7 @@ html {
 body {
     width: 350px;
     height: auto;
-    background-color: #fff;
+    background-color: #FFFFFF;
 }
 
 div#branding {
@@ -51,6 +51,8 @@ img {
 
 #container {
     font-size: 14px;
+/*     color: #FFFFFF; */
+    color: #061f43;
     visibility: hidden;
     overflow: hidden;
     box-sizing: border-box;
@@ -67,8 +69,8 @@ img {
 }
 
 .header {
-    border-bottom: 1px solid #cacaca;
-    background-color: #f4f4f4;
+/*     border-bottom: 1px solid #cacaca; */
+    background-color: #061f43;
 }
 
 #searchContainer {
