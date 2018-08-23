@@ -12,7 +12,7 @@
         "default_title": "Hesburgh Library Assistant" // Rename with your chosen title
     },
     "icons": {
-        "16": "/images/icons/icon16.png", // the following lines determine the way your icons look. Square icons only; 16x16px, 48x48px, 128x128px
+        "16": "https://library.nd.edu/icons/favicon-16x16.png", // the following lines determine the way your icons look. Square icons only; 16x16px, 48x48px, 128x128px
         "48": "/images/icons/icon48.png", // you will have to generate these icons yourself.
         "128": "/images/icons/icon128.png" 
     },
